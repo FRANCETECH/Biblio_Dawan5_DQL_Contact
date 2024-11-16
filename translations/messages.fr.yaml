@@ -1,0 +1,12 @@
+registrationForm.username: "Nom d'utilisateur"
+registrationForm.enregistrer: "S'enregister"
+Username: "Utilisateur"
+Password: 'Mot de passe'
+'Agree terms': 'Accepter les conditions'
+Email: E-mail
+"S'enregistrer": "S'enregistrer"
+Welcome: Bienvenue
+welcome_1: 'Bonjour name'
+hello: Salut
+message.welcome: Bienvenue sur notre application
+message.hello: Bonjour %name%, comment allez vous ?

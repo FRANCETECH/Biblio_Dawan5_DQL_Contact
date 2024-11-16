@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello I18nController!{% endblock %}
+
+{% trans_default_domain 'app' %}  {#  Chercher l'explication sur myt #}
+
+{% block body %}
+
+    <h2>Domaine de traduction</h2>
+
+    <div class="mb-3">
+        <a href="{{ path('i18n_domain', {_locale: 'fr'}) }}">Français</a> -
+        <a href="{{ path('i18n_domain', {_locale: 'en'}) }}">English</a>
+    </div>
+
+    <p>{{ 'message'|trans }}</p>
+
+{% endblock %}
+
+
+{# https://github.com/symfony/symfony/issues/8469 #}

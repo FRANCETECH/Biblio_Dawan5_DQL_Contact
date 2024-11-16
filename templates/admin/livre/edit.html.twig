@@ -1,0 +1,16 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title "Livre : " ~ livre.title %}
+
+
+{% block body %}
+
+	<h1>{{ livre.title }}</h1>
+    {# On n'a plusieurs helpers liés à l'affichage des formulaires(form_start, form_rest, form_end, form_row, form...), ici on utilise le helper form, 
+    qui est une fonction très interessante, on lui passe le formulaire contenu dans la variable form  #}  
+
+	<p>
+        {{ form(form) }}
+    </p>
+
+{% endblock %}

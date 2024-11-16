@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de contact{% endblock %}
+
+{% block body %}
+
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="col-md-6">
+        <div class="card" style="background-color: #F1F1F1;">
+            <div class="card-body">
+                {% for label, messages in app.flashes %}
+                    <div class="alert alert-{{ label }} fade show" role="alert">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                <h1 class="text-center">Contactez-nous</h1>
+                {{ form_start(form, {'attr': {'autocomplete': 'off'}}) }}
+                {{ form_widget(form) }}
+               {# <button type="submit" class="btn btn-primary w-100 mt-3">Envoyer</button>#}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Vérification des alertes flash
+        var alerts = document.querySelectorAll('.alert');
+        if (alerts.length > 0) {
+            // Redirection après 3 secondes
+            setTimeout(function() {
+                window.location.href = "{{ path('home') }}"; // Redirige après avoir affiché le message flash
+            }, 3000); // délai de 3 secondes
+        }
+    });
+</script>
+
+{% endblock %}

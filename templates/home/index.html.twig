@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Welcome' | trans }}</h1>
+
+    <p>
+        {{ 'welcome_1' | trans({name: 'Jean-Marc'}) }}  {# On lie la clé au name pour avoir: Bonjour Alexandre. Dans messages.fr.yaml: welcome_1: 'Bonjour name' #}
+    </p>
+{% endblock %}

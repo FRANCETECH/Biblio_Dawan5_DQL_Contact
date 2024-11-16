@@ -1,5 +1,5 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+controllers: # Permet de definir un groupe de route, sert de point de depart pour définir les routes
+    resource: # Ce paramètre indique la ressource qui sera scannée pour définir les routes. Dans ce cas, il s'agit d'un chemin spécifique et d'un espace de noms.
+        path: ../src/Controller/ #Chemin relatif. Ici, Symfony scanne tous les fichiers PHP situés dans ce répertoire (src/Controller) pour détecter les classes.
+        namespace: App\Controller # l'espace de noms des classes contrôleurs que Symfony va considérer lors du scan. Cela garantit que seules les classes se trouvant sous cet espace de noms seront traitées comme des contrôleurs.
+    type: attribute # Cela indique que les routes des contrôleurs sont configurées à l'aide des attributs PHP. En Symfony 7 (et depuis Symfony 5.2), il est possible de définir les routes directement à l'aide d'attributs (ou annotations), en utilisant les attributs natifs de PHP introduits avec PHP 8.

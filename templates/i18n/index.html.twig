@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello I18nController!{% endblock %}
+
+
+{% block body %}
+
+    <h2>Traduction</h2> 
+
+    <div class="mb-3">
+        {# Lien pour changer la langue vers le français en utilisant la route 'i18n_index' et en passant la locale 'fr' comme paramètre #}
+        <a href="{{ path('i18n_index', {_locale: 'fr'}) }}">Français</a> -
+        {# Lien pour changer la langue vers l'anglais de la même manière, en passant la locale 'en' #}
+        <a href="{{ path('i18n_index', {_locale: 'en'}) }}">English</a>
+    </div>
+
+    {# Affichage du message traduit que le contrôleur a passé à la vue #}
+    <p>{{ message }}</p>
+
+    {# Utilisation du filtre 'trans' pour traduire la clé 'message.welcome' directement dans le template Twig #}
+    <p class="lead">{{ 'message.welcome'|trans }}</p>
+
+    {# Traduction de la clé 'message.hello' en passant un paramètre dynamique, ici '%name%' sera remplacé par 'Alexandre' #}
+    <p>{{ 'message.hello'|trans({'%name%': 'Romuald'}) }}</p>
+
+    {# Utilisation du bloc 'trans' pour traduire un message avec un paramètre ('%name%' => 'Jean') en français explicitement, quelle que soit la locale courante #}
+    {% trans with {'%name%': 'Jean-Marc'} into 'fr' %}message.hello{% endtrans %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte 
+{% endblock %}
+
+{% block body %}
+	<div class="login container mt-5 d-flex">
+		<div class="col-12 col-md-8 login-content">
+			<h1>Bienvenue
+				{{ app.user.username }}
+			</h1>
+			<div class="list-buttons">
+				<a href="{{ path('app_account_edit') }}" class="btn btn-primary btn-lg">Gérer mon compte</a>
+				<a href="{{ path('app_account_password') }}" class="btn btn-primary btn-lg">Modifier mon mot de passe</a>
+				<a href="{{ path('admin.livre.index') }}" class="btn btn-primary btn-lg">Voir Les Livres</a>
+			</div>
+		</div>
+		
+	</div>
+{% endblock %}
